@@ -1,4 +1,4 @@
-// https://sepolia.etherscan.io/address/0x8538d16f17332d3549ebb80657e541db92c1f898#code
+// https://sepolia.etherscan.io/address/0x34b08ccf9620aed6d158bae65e85bb3bbe2c384a#code
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
@@ -22,25 +22,32 @@ interface IPool {
 pragma solidity ^0.8.0;
 
 contract Sindicate {
+    struct userData{
+        address from;
+        uint128 healtFactor;
+    }
+
     IPool public pool;
-    uint public limit = 2060000000000000000;
+    uint public limit = 1500000000000000000;
+
     constructor(address pool_) {
         pool = IPool(pool_);
     }
 
-    function check(address[] memory user) public view returns (bool[] memory) {
-        bool[] memory healthFactor = new bool[](user.length);
+    function check(address[] memory user) public view returns (userData[] memory) {
+        userData[] memory healthFactor = new userData[](user.length);
         uint256 healt;
         uint j;
         for (uint i = 0; i < user.length; i++) {
             (, , , , , healt) = pool.getUserAccountData(user[i]);
             if (healt < limit) {
-                healthFactor[i] = true;
+                healthFactor[j] = userData(user[i],uint128(healt));
                 j++;
             }
         }
         return healthFactor;
     }
+    
     function changeLimit(uint newLimit) public {
         limit = newLimit;
     }
