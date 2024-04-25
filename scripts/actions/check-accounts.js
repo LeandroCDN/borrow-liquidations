@@ -10,7 +10,7 @@ const readFileAsync = promisify(fs.readFile);
 /* Check accounts for all addresses for a specific asset in a specific blockchain */
 async function checkAccounts() {
   console.log("Iniciando el script...");
-  const contractAddress = process.env.SEPOLIA_SINDICATE_ADDRESS;
+  const contractAddress = process.env.SEPOLIA_SINDICATE_V2_ADDRESS;
   const url = process.env.SEPOLIA_ETH_RPC;
   const ABI = sindicateABI.result;
   const directionPath = "listOfHolders/direcciones.json";
@@ -46,14 +46,15 @@ async function checkAccounts() {
   let i = 0;
   try {
     status = 'Reading'
-    for (const addressGroup of direcciones) {    
-      const listOfLowHealtFactor = await sindicate.check(addressGroup);
+    // for (const addressGroup of direcciones) {    
+      const vectorDeTest = ["0x467941883c3062d1f04178f75e700a21f5a1aa90", "0x2f2920da1407b134cadd7207e21579ec20bb6a85", "0x97da64fdc901c64ce0588d61091085e180791519", "0x3b4977f2c6e90bc6bc4011b8443c578dd672ff44", "0x9b61542f076b8ae611650cc4eb932e60315f6a0f", "0x98a0ea5cba5ffb08bbc177880914ffafd390afa0", "0x9114361e38315a7f189158fb892e184bfd25a4d0", "0x00b9228eb19a13c6a943b350916dd2aa7f182c21", "0x875cbee17c35e8ce1f1919dd508de63e833d22c0", "0x046e2d2d1dde81f6a1d2d8f2bb8fb24a592371db"]
+      const listOfLowHealtFactor = await sindicate.check(vectorDeTest);
       i++;
-      console.log(`listOfLowHealtFactor:[${i}/${length}] `, listOfLowHealtFactor);
+      // console.log(`listOfLowHealtFactor:[${i}/${length}] `, listOfLowHealtFactor);
       // Escribir el archivo lowFactorAddresses.json con el contenido de listOfLowHealtFactor
-      const lowFactorFilePath = path.join(chainFolderPath, "lowFactorAddresses.json");
-      fs.writeFileSync(lowFactorFilePath, JSON.stringify(listOfLowHealtFactor, null, 2), { flag: 'a' });
-    }
+      // const lowFactorFilePath = path.join(chainFolderPath, "lowFactorAddresses.json");
+      // fs.writeFileSync(lowFactorFilePath, JSON.stringify(listOfLowHealtFactor, null, 2), { flag: 'a' });
+    // }
     status = 'Writed'
   } catch (error) {
     status = `Error: ${error}`;
