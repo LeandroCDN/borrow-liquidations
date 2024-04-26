@@ -5,7 +5,8 @@
       "chainId": "991",
       "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
       "tokens": {
-        "Dai": "listOfHolders/direcciones.json"
+        "Dai": "listOfHolders/sepolia/direcciones.json",
+        "WBTC": "listOfHolders/sepolia/variableDebtEthWBTC.json"
       }
     }
   }

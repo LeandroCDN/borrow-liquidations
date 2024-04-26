@@ -41,7 +41,7 @@ async function checkAccounts({
   }
 
   // Crear la subcarpeta chainId dentro de LowFactor si no existe
-  const chainFolderPath = path.join(lowFactorPath, chainId.toString());
+  const chainFolderPath = path.join(lowFactorPath, blockchainName.toString());
   if (!fs.existsSync(chainFolderPath)) {
     fs.mkdirSync(chainFolderPath);
   }
@@ -74,10 +74,7 @@ async function checkAccounts({
       console.log(`listOfLowHealtFactor:[${i}/${length}] `, formattedResult);
 
       // Escribir el archivo lowFactorAddresses.json con el contenido de trimmedResult
-      const lowFactorFilePath = path.join(
-        chainFolderPath,
-        "lowFactorAddresses.json"
-      );
+      const lowFactorFilePath = path.join(chainFolderPath, tokenName);
       fs.writeFileSync(
         lowFactorFilePath,
         JSON.stringify(formattedResult, null, 2),

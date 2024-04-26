@@ -1,7 +1,7 @@
 import json
 
 # Leer el archivo .md y obtener las direcciones
-with open("lista.txt", "r") as file:
+with open("car.txt", "r") as file:
     addresses = [line.strip() for line in file if line.strip()]
 
 # Filtrar las direcciones vacías
@@ -18,5 +18,5 @@ address_groups = [
 ]
 
 # Escribir los resultados en un archivo JSON
-with open("direcciones.json", "w") as outfile:
+with open("variableDebtEthWBTC.json", "w") as outfile:
     json.dump(address_groups, outfile)
