@@ -1,13 +1,9 @@
 const { ethers } = require("ethers");
 
-async function createContract({
-  contractAddress,
-  url,
-  ABI,
-}) {
+async function createContract({ contractAddress, rpc, ABI }) {
   console.log("Create contract");
 
-  const provider = new ethers.WebSocketProvider(url);
+  const provider = new ethers.WebSocketProvider(rpc);
   try {
     const abiArray = JSON.parse(ABI);
     // Crear una instancia del contrato utilizando el ABI y la dirección del contrato

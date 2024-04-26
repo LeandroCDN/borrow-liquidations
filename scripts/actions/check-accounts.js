@@ -1,4 +1,4 @@
-require('dotenv').config(); 
+require("dotenv").config();
 const createContract = require("./create-contract");
 const sindicateABI = require("../../ABI/sindicate.json");
 const fs = require("fs");
@@ -8,19 +8,25 @@ const { promisify } = require("util");
 const readFileAsync = promisify(fs.readFile);
 
 /* Check accounts for all addresses for a specific asset in a specific blockchain */
-async function checkAccounts() {
+async function checkAccounts({
+  sindicate,
+  chainId,
+  directionPath,
+  blockchainName,
+  tokenName,
+}) {
   console.log("Iniciando el script...");
-  const contractAddress = process.env.SEPOLIA_SINDICATE_V2_ADDRESS;
-  const url = process.env.SEPOLIA_ETH_RPC;
-  const ABI = sindicateABI.result;
-  const directionPath = "listOfHolders/direcciones.json";
-  const chainId = 99991;
+  // const contractAddress = process.env.SEPOLIA_SINDICATE_V2_ADDRESS;
+  // const rpc = process.env.SEPOLIA_ETH_RPC;
+  // const ABI = sindicateABI.result;
+  // const directionPath = "listOfHolders/direcciones.json";
+  // const chainId = 99991;
 
-  const sindicate = await createContract({
-    contractAddress,
-    url,
-    ABI,
-  });
+  // const sindicate = await createContract({
+  //   contractAddress,
+  //   rpc,
+  //   ABI,
+  // });
   // Leer el archivo direcciones.json
   const direccionesPath = path.join(
     __dirname,
@@ -42,32 +48,55 @@ async function checkAccounts() {
   // Pasar cada vector de direcciones al método sindicate.check()
   const start = Date.now(); // Guarda el tiempo de inicio del proceso
   const length = direcciones.length;
-  let status = 'starting'
+  let status = "starting";
   let i = 0;
   try {
-    status = 'Reading'
-    // for (const addressGroup of direcciones) {    
-      const vectorDeTest = ["0x467941883c3062d1f04178f75e700a21f5a1aa90", "0x2f2920da1407b134cadd7207e21579ec20bb6a85", "0x97da64fdc901c64ce0588d61091085e180791519", "0x3b4977f2c6e90bc6bc4011b8443c578dd672ff44", "0x9b61542f076b8ae611650cc4eb932e60315f6a0f", "0x98a0ea5cba5ffb08bbc177880914ffafd390afa0", "0x9114361e38315a7f189158fb892e184bfd25a4d0", "0x00b9228eb19a13c6a943b350916dd2aa7f182c21", "0x875cbee17c35e8ce1f1919dd508de63e833d22c0", "0x046e2d2d1dde81f6a1d2d8f2bb8fb24a592371db"]
-      const listOfLowHealtFactor = await sindicate.check(vectorDeTest);
+    status = "Reading";
+    for (const addressGroup of direcciones) {
+      // const vectorDeTest = ["0x467941883c3062d1f04178f75e700a21f5a1aa90", "0x2f2920da1407b134cadd7207e21579ec20bb6a85", "0x97da64fdc901c64ce0588d61091085e180791519", "0x3b4977f2c6e90bc6bc4011b8443c578dd672ff44", "0x9b61542f076b8ae611650cc4eb932e60315f6a0f", "0x98a0ea5cba5ffb08bbc177880914ffafd390afa0", "0x9114361e38315a7f189158fb892e184bfd25a4d0", "0x00b9228eb19a13c6a943b350916dd2aa7f182c21", "0x875cbee17c35e8ce1f1919dd508de63e833d22c0", "0x046e2d2d1dde81f6a1d2d8f2bb8fb24a592371db"]
+      const listOfLowHealtFactor = await sindicate.check(addressGroup);
       i++;
-      // console.log(`listOfLowHealtFactor:[${i}/${length}] `, listOfLowHealtFactor);
-      // Escribir el archivo lowFactorAddresses.json con el contenido de listOfLowHealtFactor
-      // const lowFactorFilePath = path.join(chainFolderPath, "lowFactorAddresses.json");
-      // fs.writeFileSync(lowFactorFilePath, JSON.stringify(listOfLowHealtFactor, null, 2), { flag: 'a' });
-    // }
-    status = 'Writed'
+
+      // Buscar la posición de la primera dirección '0x0000000000000000000000000000000000000000'
+      const indexOfZeroAddress = listOfLowHealtFactor.findIndex(
+        ([address]) => address === "0x0000000000000000000000000000000000000000"
+      );
+      // Cortar el vector desde la primera posición hasta indexOfZeroAddress
+      const trimmedResult = listOfLowHealtFactor.slice(
+        0,
+        indexOfZeroAddress + 1
+      );
+      const formattedResult = trimmedResult.map(([address, value]) => [
+        address,
+        value.toString(),
+      ]);
+
+      console.log(`listOfLowHealtFactor:[${i}/${length}] `, formattedResult);
+
+      // Escribir el archivo lowFactorAddresses.json con el contenido de trimmedResult
+      const lowFactorFilePath = path.join(
+        chainFolderPath,
+        "lowFactorAddresses.json"
+      );
+      fs.writeFileSync(
+        lowFactorFilePath,
+        JSON.stringify(formattedResult, null, 2),
+        { flag: "a" }
+      );
+    }
+    status = "Writed";
   } catch (error) {
     status = `Error: ${error}`;
-    console.log('error: ', error);
+    console.log("error: ", error);
   }
   const end = Date.now(); // Guarda el tiempo de finalización del proceso
-  const totalTimeInSeconds = (end - start) / 1000; 
-   // Crear el archivo resume.json
-   const resumeData = {
+  const totalTimeInSeconds = (end - start) / 1000;
+  // Crear el archivo resume.json
+  const resumeData = {
     direcciones: length,
     time: totalTimeInSeconds,
     lastRead: i,
-    status: status
+    status: status,
   };
   const resumeFilePath = path.join(chainFolderPath, "resume.json");
   fs.writeFileSync(resumeFilePath, JSON.stringify(resumeData, null, 2));
@@ -80,85 +109,3 @@ if (require.main === module) {
 
 // Exporta la función checkAccounts para poder ser utilizada desde otros módulos si es necesario
 module.exports = checkAccounts;
-
-/**
- * 
- * require('dotenv').config(); 
-const createContract = require("./create-contract");
-const sindicateABI = require("../../ABI/sindicate.json");
-const fs = require("fs");
-const path = require("path");
-const { promisify } = require("util");
-
-const readFileAsync = promisify(fs.readFile);
-
- Check accounts for all addresses for a specific asset in a specific blockchain
-async function checkAccounts() {
-  console.log("Iniciando el script...");
-  const contractAddress = process.env.SEPOLIA_SINDICATE_ADDRESS;
-  const url = process.env.SEPOLIA_ETH_RPC;
-  const ABI = sindicateABI.result;
-  const path = "listOfHolders/direcciones2.json";
-  const chainId = 99991;
-
-  const sindicate = await createContract({
-    contractAddress,
-    url,
-    ABI,
-  });
-  // Leer el archivo direcciones.json
-  const direccionesPath = path.join(
-    __dirname,
-    `../../contracts/addresses/${path}`
-  );
-  const direccionesData = await readFileAsync(direccionesPath, "utf8");
-  const direcciones = JSON.parse(direccionesData);
-  // Pasar cada vector de direcciones al método sindicate.check()
-  const start = Date.now(); // Guarda el tiempo de inicio del proceso
-  const lenght = direcciones.length;
-  let status = 'starting'
-  let i = 0;
-  try {
-    status = 'Reading'
-    for (const addressGroup of direcciones) {    
-      const listOfLowHealtFactor = await sindicate.check(addressGroup);
-      i++;
-      console.log(`listOfLowHealtFactor:[${i}/${lenght}] `, listOfLowHealtFactor);
-      const lowFactorPath = path.join(__dirname, "../../LowFactor");
-      if (!fs.existsSync(lowFactorPath)) {
-        fs.mkdirSync(lowFactorPath);
-      }
-
-      // Crear la subcarpeta chainId dentro de LowFactor si no existe
-      const chainFolderPath = path.join(lowFactorPath, chainId.toString());
-      if (!fs.existsSync(chainFolderPath)) {
-        fs.mkdirSync(chainFolderPath);
-      }
-      
-      // Escribir el archivo lowFactorAddresses.json con el contenido de listOfLowHealtFactor
-      const lowFactorFilePath = path.join(chainFolderPath, "lowFactorAddresses.json");
-      fs.writeFileSync(lowFactorFilePath, JSON.stringify(listOfLowHealtFactor, null, 2));
-      
-    }
-    status = 'Writed'
-  } catch (error) {
-    status = `Error: ${error}`;
-    console.log('error: ', error);
-  }
-   // Crear el archivo resume.json
-   const resumeData = {
-    direcciones: length,
-    lastRead: i,
-    status: status
-  };
-  const resumeFilePath = path.join(chainFolderPath, "resume.json");
-  fs.writeFileSync(resumeFilePath, JSON.stringify(resumeData, null, 2));
-  const end = Date.now(); // Guarda el tiempo de finalización del proceso
-  const totalTimeInSeconds = (end - start) / 1000; 
-  console.log("Finish in:", totalTimeInSeconds, "seconds");
-}
-
-if (require.main === module) {
-  checkAccounts();
-}
- */
