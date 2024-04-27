@@ -74,7 +74,7 @@ async function checkAccounts({
       console.log(`listOfLowHealtFactor:[${i}/${length}] `, formattedResult);
 
       // Escribir el archivo lowFactorAddresses.json con el contenido de trimmedResult
-      const lowFactorFilePath = path.join(chainFolderPath, tokenName);
+      const lowFactorFilePath = path.join(chainFolderPath, tokenName+".json");
       fs.writeFileSync(
         lowFactorFilePath,
         JSON.stringify(formattedResult, null, 2),

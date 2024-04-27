@@ -28,7 +28,7 @@ contract Sindicate {
     }
 
     IPool public pool;
-    uint public limit = 1500000000000000000;
+    uint public limit = 150000000000000000;
 
     constructor(address pool_) {
         pool = IPool(pool_);
