@@ -15,7 +15,7 @@ async function checkAccounts({
   blockchainName,
   tokenName,
 }) {
-  console.log("Iniciando el script...");
+  console.log("Iniciando el script Check-Accounts...");
   // const contractAddress = process.env.SEPOLIA_SINDICATE_V2_ADDRESS;
   // const rpc = process.env.SEPOLIA_ETH_RPC;
   // const ABI = sindicateABI.result;
@@ -71,10 +71,12 @@ async function checkAccounts({
         value.toString(),
       ]);
 
-      console.log(`listOfLowHealtFactor:[${i}/${length}] `, formattedResult);
+      console.log(
+        `[${blockchainName}-${tokenName}] Progress:[${i}/${length}] ResultLength: ${formattedResult.length}`
+      );
 
       // Escribir el archivo lowFactorAddresses.json con el contenido de trimmedResult
-      const lowFactorFilePath = path.join(chainFolderPath, tokenName);
+      const lowFactorFilePath = path.join(chainFolderPath, tokenName + ".json");
       fs.writeFileSync(
         lowFactorFilePath,
         JSON.stringify(formattedResult, null, 2),
