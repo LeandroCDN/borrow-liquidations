@@ -1,9 +1,20 @@
-// "Sepolia": {
-    //   "contractAddress": "0x34b08ccf9620aed6d158bae65e85bb3bbe2c384a",
-    //   "chainId": "991",
-    //   "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
-    //   "tokens": {
-    //     "Dai": "listOfHolders/sepolia/direcciones.json",
-    //     "WBTC": "listOfHolders/sepolia/variableDebtEthWBTC.json"
-    //   }
-    // },
+"Sepolia": {
+      "contractAddress": "0x34b08ccf9620aed6d158bae65e85bb3bbe2c384a",
+      "chainId": "991",
+      "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
+      "tokens": {
+        "Dai": "listOfHolders/sepolia/direcciones.json",
+        "WBTC": "listOfHolders/sepolia/variableDebtEthWBTC.json"
+      }
+    },
+
+    "Polygon": {
+        "contractAddress": "0x2BDd1deA04F2C87A2F7257a1263bd7D97d6b0da7",
+        "chainId": "137",
+        "rpc": "wss://polygon-bor-rpc.publicnode.com",
+        "tokens": {
+          "WETH": "listOfHolders/AaveAddress/polygon/variableDebtPolWETH.json",
+          "USDC": "listOfHolders/AaveAddress/polygon/variableDebtPolUSDC.json",
+          "DAI": "listOfHolders/AaveAddress/polygon/variableDebtPolDAI.json"
+        }
+      },

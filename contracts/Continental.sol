@@ -21,14 +21,15 @@ interface IPool {
 
 pragma solidity ^0.8.0;
 
-contract Sindicate {
+contract Continental {
     struct userData{
         address from;
         uint128 healtFactor;
     }
 
     IPool public pool;
-    uint public limit = 150000000000000000;
+    uint public maxLimit = 100000000000000000;
+    uint public minLimit = 0;
 
     constructor(address pool_) {
         pool = IPool(pool_);
@@ -40,7 +41,7 @@ contract Sindicate {
         uint j;
         for (uint i = 0; i < user.length; i++) {
             (, , , , , healt) = pool.getUserAccountData(user[i]);
-            if (healt < limit) {
+            if (healt > minLimit && healt < maxLimit) {
                 healthFactor[j] = userData(user[i],uint128(healt));
                 j++;
             }
@@ -48,8 +49,9 @@ contract Sindicate {
         return healthFactor;
     }
     
-    function changeLimit(uint newLimit) public {
-        limit = newLimit;
+    function changeLimit(uint newMaxLimit, uint newMinLimit) public {
+        maxLimit = newMaxLimit;
+        minLimit = newMinLimit;
     }
     function changeIPool(address newPool) public {
         pool = IPool(newPool);

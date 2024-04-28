@@ -1,7 +1,7 @@
 import json
 
 # Leer el archivo .md y obtener las direcciones
-with open("variableDebtPolDAI.txt", "r") as file:
+with open("./toproces/ZeroLend-linea-V-D-WETH.txt", "r") as file:
     addresses = [line.strip() for line in file if line.strip()]
 
 # Filtrar las direcciones vacías
@@ -18,5 +18,5 @@ address_groups = [
 ]
 
 # Escribir los resultados en un archivo JSON
-with open("variableDebtPolDAI.json", "w") as outfile:
+with open("ZeroLend-linea-V-D-WETH.json", "w") as outfile:
     json.dump(address_groups, outfile)
