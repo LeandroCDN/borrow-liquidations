@@ -1,6 +1,10 @@
 {
   "direcciones": 10,
+<<<<<<< HEAD
   "time": 3.931,
+=======
+  "time": 3.577,
+>>>>>>> db32a1ffc12cb823edc90c4219c57f9f6001eb3c
   "lastRead": 10,
   "status": "Writed"
 }
