@@ -1,7 +1,8 @@
-// https://sepolia.etherscan.io/address/0x34b08ccf9620aed6d158bae65e85bb3bbe2c384a#code
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
+
+
 
 interface IPool {
     function getUserAccountData(
@@ -18,6 +19,8 @@ interface IPool {
             uint256 healthFactor
         );
 }
+
+
 
 pragma solidity ^0.8.0;
 
@@ -41,6 +44,8 @@ contract Continental {
         uint j;
         for (uint i = 0; i < user.length; i++) {
             (, , , , , healt) = pool.getUserAccountData(user[i]);
+            //  (collateralValue, , , , , healt) = pool.getUserAccountData(user[i]);
+            //  if (totalCollateralBase > X)=>
             if (healt > minLimit && healt < maxLimit) {
                 healthFactor[j] = userData(user[i],uint128(healt));
                 j++;
@@ -48,7 +53,37 @@ contract Continental {
         }
         return healthFactor;
     }
-    
+
+    function checkMinTotalCollateralBase(address[] memory user, uint minTotalCollateralBase) public view returns (userData[] memory) {
+        userData[] memory healthFactor = new userData[](user.length);
+        uint256 healt;
+        uint j;
+        uint256 totalCollateralBase;
+        for (uint i = 0; i < user.length; i++) {
+            (totalCollateralBase, , , , , healt) = pool.getUserAccountData(user[i]);
+            if (healt > minLimit && healt < maxLimit && totalCollateralBase > minTotalCollateralBase) {
+                healthFactor[j] = userData(user[i],uint128(healt));
+                j++;
+            }
+        }
+        return healthFactor;
+    }
+
+    function fullCheck(address[] memory user, uint minTotalCollateralBase, uint floor, uint ceiling) public view returns (userData[] memory) {
+        userData[] memory healthFactor = new userData[](user.length);
+        uint256 healt;
+        uint j;
+        uint256 totalCollateralBase;
+        for (uint i = 0; i < user.length; i++) {
+            (totalCollateralBase, , , , , healt) = pool.getUserAccountData(user[i]);
+            if (healt > floor && healt < ceiling && totalCollateralBase > minTotalCollateralBase) {
+                healthFactor[j] = userData(user[i],uint128(healt));
+                j++;
+            }
+        }
+        return healthFactor;
+    }
+     
     function changeLimit(uint newMaxLimit, uint newMinLimit) public {
         maxLimit = newMaxLimit;
         minLimit = newMinLimit;

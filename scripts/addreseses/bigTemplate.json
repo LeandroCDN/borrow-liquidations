@@ -1,0 +1,102 @@
+{
+  "ZeroLend": {
+    "blockchains": {
+      "Linea": {
+        "contractAddress": "0x59CaDD821B46805ebf994D643Ed349Fa48850bC8",
+        "chainId": "59144",
+        "rpc": "wss://linea-mainnet.infura.io/ws/v3/d66c313f3d434be7a134cb954b5ead36",
+        "tokens": {
+          "USDC": "listOfHolders/ZeroLend/debt/zerolend-linea-debt-usdc.json",
+          "USDT": "listOfHolders/ZeroLend/debt/ZeroLend-linea-V-D-USDT.json",
+          "WETH": "listOfHolders/ZeroLend/debt/ZeroLend-linea-V-D-WETH.json",
+          "WBTC": "0xf61a1d02103958b8603f1780702982e2ec9f9e68"
+        }
+      },
+      "Blast": {
+        "contractAddress": "",
+        "chainId": "81457",
+        "rpc": "",
+        "tokens": {
+          "WETH": "https://blastscan.io/token/0x29c2bc372728dacb472a7e90e5fc8aa0f203c8cd",
+          "USDB ": "https://blastscan.io/token/0x0e914b7669e97fd0c2644af60e90ea7ddb4f91d1"
+        }
+      },
+      "Manta": {
+        "contractAddress": "",
+        "chainId": "169",
+        "rpc": "wss://pacific-rpc.manta.network/ws",
+        "tokens": {
+          "WETH": "https://pacific-explorer.manta.network/token/0xcC7b5Fd2F290a61587352343b7Cf77bB35cB6f00?tab=holders",
+          "USDC": "https://pacific-explorer.manta.network/token/0xCb2dA0F5aEce616e2Cbf29576CFc795fb15c6133?tab=holders",
+          "STONE": "",
+          "USDB ": "",
+          "WUSDM": "",
+          "USDT": "https://pacific-explorer.manta.network/token/0xc1d9ca73f57930D4303D380C5DC668C40B38598B?tab=holders",
+          "MANTA": "",
+          "TIA": "",
+          "WBTC": "https://pacific-explorer.manta.network/token/0xe6B9b00d42fA5831ccE4E44D9d6D8C51ba17cd1E?tab=holders",
+          "wstETH": "https://pacific-explorer.manta.network/token/0xb5EEf4Df2e48Fb41E6eaE6778c14787bAAa181F1?tab=holders"
+        }
+      },
+      "zkSync": {
+        "contractAddress": "",
+        "chainId": "324",
+        "rpc": "wss://mainnet.era.zksync.io/ws",
+        "tokens": {
+          "WETH": "https://era.zksync.network/token/0x56f58d9BE10929CdA709c4134eF7343D73B080Cf#balances",
+          "USDT": "https://era.zksync.network/token/0xa333c6FF89525939271E796FbDe2a2D9A970F831#balances",
+          "USDC": "https://era.zksync.network/token/0xE60E1953aF56Db378184997cab20731d17c65004#balances",
+          "WBTC": "https://era.zksync.network/token/0xabd3c4e4ac6e0d81fcfa5c41a76e9583a8f81909",
+          "DAI": "https://era.zksync.network/token/0x0325f21eb0a16802e2bacd931964434929985548#balances",
+          "LUSD": ""
+        }
+      }
+    }
+  },
+  "Aave": {
+    "blockchains": {
+      "Polygon": {
+        "contractAddress": "0x2BDd1deA04F2C87A2F7257a1263bd7D97d6b0da7",
+        "chainId": "137",
+        "rpc": "wss://polygon-bor-rpc.publicnode.com",
+        "tokens": {
+          "WETH": "listOfHolders/AaveAddress/polygon/variableDebtPolWETH.json",
+          "USDC": "listOfHolders/AaveAddress/polygon/variableDebtPolUSDC.json",
+          "DAI": "listOfHolders/AaveAddress/polygon/variableDebtPolDAI.json"
+        }
+      },
+      "Sepolia": {
+        "contractAddress": "0x34b08ccf9620aed6d158bae65e85bb3bbe2c384a",
+        "chainId": "991",
+        "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
+        "tokens": {
+          "Dai": "listOfHolders/sepolia/direcciones.json",
+          "WBTC": "listOfHolders/sepolia/variableDebtEthWBTC.json"
+        }
+      }
+    }
+  },
+  "Radiant": {
+    "blockchains": {
+      "1": {
+        "contractAddress": "",
+        "chainId": "",
+        "rpc": "",
+        "tokens": {
+          "WETH": "",
+          "USDC": "",
+          "DAI": ""
+        }
+      },
+      "2": {
+        "contractAddress": "",
+        "chainId": "",
+        "rpc": "",
+        "tokens": {
+          "Dai": "",
+          "WBTC": ""
+        }
+      }
+    }
+  }
+}

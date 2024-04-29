@@ -6,8 +6,9 @@ const addressIndex = require("../addreseses/addressIndex.json");
 async function checkTokens() {
   try {
     const ABI = sindicateABI.result;
-    for (const blockchainName in addressIndex.blockchains) {
-      const blockchain = addressIndex.blockchains[blockchainName];
+    const zeroLend = addressIndex.ZeroLend;
+    for (const blockchainName in zeroLend.blockchains) {
+      const blockchain = zeroLend.blockchains[blockchainName];
       const { contractAddress, tokens, chainId, rpc } = blockchain;
 
       console.log(rpc);

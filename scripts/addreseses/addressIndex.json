@@ -1,13 +1,16 @@
 {
-  "blockchains": {
-    "Linea": {
-      "contractAddress": "0x72373B24932B863de80B7326829E0B94363f9204",
-      "chainId": "59144",
-      "rpc": "wss://linea-mainnet.infura.io/ws/v3/d66c313f3d434be7a134cb954b5ead36",
-      "tokens": {
-        "USDC": "listOfHolders/ZeroLend/debt/zerolend-linea-debt-usdc.json",
-        "USDT": "listOfHolders/ZeroLend/debt/ZeroLend-linea-V-D-USDT.json",
-        "WETH": "listOfHolders/ZeroLend/debt/ZeroLend-linea-V-D-WETH.json"
+  "ZeroLend": {
+    "blockchains": {
+      "Linea": {
+        "contractAddress": "0x59CaDD821B46805ebf994D643Ed349Fa48850bC8",
+        "chainId": "59144",
+        "rpc": "wss://linea-mainnet.infura.io/ws/v3/d66c313f3d434be7a134cb954b5ead36",
+        "tokens": {
+          "USDC": "listOfHolders/ZeroLend/Linea/debt/zerolend-linea-debt-usdc.json",
+          "USDT": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-USDT.json",
+          "WETH": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-WETH.json",
+          "WBTC": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-WBTC.json"
+        }
       }
     }
   }
