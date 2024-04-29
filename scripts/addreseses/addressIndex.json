@@ -1,6 +1,15 @@
 {
   "ZeroLend": {
     "blockchains": {
+      "Blast": {
+        "contractAddress": "0x34B08ccf9620aEd6d158BaE65e85Bb3bBe2c384A",
+        "chainId": "81457",
+        "rpc": "wss://multi-greatest-moon.blast-mainnet.quiknode.pro/6905460b2e8aee938a79723c1e8b072cbb2b654e/",
+        "tokens": {
+          "WETH": "listOfHolders/ZeroLend/Blast/debt/ZeroLend-Blast-V-D-WETH.json",
+          "USDB": "listOfHolders/ZeroLend/Blast/debt/ZeroLend-Blast-V-D-USDB.json"
+        }
+      },
       "Linea": {
         "contractAddress": "0x59CaDD821B46805ebf994D643Ed349Fa48850bC8",
         "chainId": "59144",
@@ -11,7 +20,7 @@
           "WETH": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-WETH.json",
           "WBTC": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-WBTC.json"
         }
-      }
+      }      
     }
   }
 }

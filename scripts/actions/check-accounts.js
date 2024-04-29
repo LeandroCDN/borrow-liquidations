@@ -60,7 +60,7 @@ async function checkAccounts({
   let status = "starting";
   let i = 0;
   let totalAddresses = 0;
-  const minValue = 9999999999;
+  const minValue = 99999999;
   try {
     status = "Reading";
     for (const addressGroup of direcciones) {
@@ -102,7 +102,10 @@ async function checkAccounts({
     status = `Error: ${error}`;
     console.log("error: ", error);
   }
-  const end = Date.now(); // Guarda el tiempo de finalización del proceso
+  const end = Date.now();
+  const date = new Date(end);
+  const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+  
   const totalTimeInSeconds = (end - start) / 1000;
   // Crear el archivo resume.json
   const resumeData = {
@@ -112,11 +115,12 @@ async function checkAccounts({
     status: status,
     token: tokenName,
     blockchain: blockchainName,
-    totalCollateralBase: minValue
+    totalCollateralBase: minValue,
+    time:formattedDate
   };
 
   const resumePath = path.join(resumeFilePath, `resume-${tokenName}.json`);
-  fs.writeFileSync(resumePath, JSON.stringify(resumeData, null, 2));
+  fs.writeFileSync(resumePath, JSON.stringify(resumeData, null, 2),{ flag: "a" });
   console.log("Finish in:", totalTimeInSeconds, "seconds");
 }
 

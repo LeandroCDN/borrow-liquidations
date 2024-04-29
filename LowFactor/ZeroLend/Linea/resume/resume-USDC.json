@@ -1,9 +1,17 @@
 {
-  "direcciones": 47,
-  "time": 11.235,
+  "direcciones": 20,
+  "time": "29/4/2024 11:40:4",
   "lastRead": 34,
   "status": "Writed",
   "token": "USDC",
   "blockchain": "Linea",
-  "totalCollateralBase": 9999999999
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 14,
+  "time": "29/4/2024 19:42:53",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDC",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
 }

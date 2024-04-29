@@ -1,9 +1,17 @@
 {
-  "direcciones": 194,
-  "time": 30.639,
+  "direcciones": 15,
+  "time": "29/4/2024 11:40:39",
   "lastRead": 102,
   "status": "Writed",
   "token": "WETH",
   "blockchain": "Linea",
-  "totalCollateralBase": 9999999999
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 9,
+  "time": "29/4/2024 19:43:27",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
 }

@@ -13,9 +13,9 @@
         }
       },
       "Blast": {
-        "contractAddress": "",
+        "contractAddress": "https://blastscan.io/address/0x34B08ccf9620aEd6d158BaE65e85Bb3bBe2c384A",
         "chainId": "81457",
-        "rpc": "",
+        "rpc": "wss://multi-greatest-moon.blast-mainnet.quiknode.pro/6905460b2e8aee938a79723c1e8b072cbb2b654e/",
         "tokens": {
           "WETH": "https://blastscan.io/token/0x29c2bc372728dacb472a7e90e5fc8aa0f203c8cd",
           "USDB ": "https://blastscan.io/token/0x0e914b7669e97fd0c2644af60e90ea7ddb4f91d1"

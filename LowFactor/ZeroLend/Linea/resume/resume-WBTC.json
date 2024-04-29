@@ -1,9 +1,17 @@
 {
-  "direcciones": 0,
-  "time": 0.614,
+  "direcciones": 1,
+  "time": "29/4/2024 11:40:39",
   "lastRead": 2,
   "status": "Writed",
   "token": "WBTC",
   "blockchain": "Linea",
-  "totalCollateralBase": 9999999999
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 1,
+  "time": "29/4/2024 19:43:28",
+  "lastRead": 2,
+  "status": "Writed",
+  "token": "WBTC",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
 }

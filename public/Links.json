@@ -3,6 +3,9 @@
     "blockchains": {
       "Linea": {
         "contractAddress": "0x59CaDD821B46805ebf994D643Ed349Fa48850bC8",
+        "Pool-Proxy": "https://lineascan.build/address/0x2f9bB73a8e98793e26Cb2F6C4ad037BDf1C6B269",
+        "UiPoolDataProviderV3": "https://lineascan.build/address/0x81b3184A3B5d4612F2c26A53Da8D99474B91B2D2",
+        "PoolAddressesProvider": "https://lineascan.build/address/0xC44827C51d00381ed4C52646aeAB45b455d200eB",
         "chainId": "59144",
         "rpc": "wss://linea-mainnet.infura.io/ws/v3/d66c313f3d434be7a134cb954b5ead36",
         "tokens": {
@@ -13,9 +16,12 @@
         }
       },
       "Blast": {
-        "contractAddress": "",
+        "ContinentalLink": "https://blastscan.io/address/0x34B08ccf9620aEd6d158BaE65e85Bb3bBe2c384A#code",
+        "Pool-Proxy": "https://blastscan.io/address/0xa70B0F3C2470AbBE104BdB3F3aaa9C7C54BEA7A8#readProxyContract",
+        "UiPoolDataProviderV3": "",
+        "PoolAddressesProvider": "",
         "chainId": "81457",
-        "rpc": "",
+        "rpc": "wss://multi-greatest-moon.blast-mainnet.quiknode.pro/6905460b2e8aee938a79723c1e8b072cbb2b654e/",
         "tokens": {
           "WETH": "https://blastscan.io/token/0x29c2bc372728dacb472a7e90e5fc8aa0f203c8cd",
           "USDB ": "https://blastscan.io/token/0x0e914b7669e97fd0c2644af60e90ea7ddb4f91d1"
@@ -57,6 +63,9 @@
     "blockchains": {
       "Polygon": {
         "contractAddress": "0x2BDd1deA04F2C87A2F7257a1263bd7D97d6b0da7",
+        "Pool-Proxy": "https://sepolia.etherscan.io/address/0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951#readProxyContract",
+        "UiPoolDataProviderV3": "0x69529987FA4A075D0C00B0128fa848dc9ebbE9CE",
+        "PoolAddressesProvider": "0x012bAC54348C0E635dCAc9D5FB99f06F24136C9A",
         "chainId": "137",
         "rpc": "wss://polygon-bor-rpc.publicnode.com",
         "tokens": {

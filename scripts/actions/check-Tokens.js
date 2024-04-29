@@ -4,6 +4,7 @@ const sindicateABI = require("../../ABI/sindicate.json");
 const addressIndex = require("../addreseses/addressIndex.json");
 
 async function checkTokens() {
+  
   try {
     const ABI = sindicateABI.result;
     const zeroLend = addressIndex.ZeroLend;
