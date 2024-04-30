@@ -22,5 +22,19 @@
         }
       }      
     }
+  },
+  "Aave":{
+    "blockchains": {
+      "Sepolia": {
+        "contractAddress": "0xCD4E9c86E3CF802691bAfAF7937DE2Ed63a2639C",
+        "chainId": "991",
+        "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
+        "tokens": {
+          "Dai": "listOfHolders/AaveAddress/sepolia/direcciones.json",
+          "WBTC": "listOfHolders/AaveAddress/sepolia/variableDebtEthWBTC.json"
+        }
+      }
+    }
+    
   }
 }

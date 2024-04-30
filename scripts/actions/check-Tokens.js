@@ -7,7 +7,7 @@ async function checkTokens() {
   
   try {
     const ABI = sindicateABI.result;
-    const zeroLend = addressIndex.ZeroLend;
+    const zeroLend = addressIndex.Aave;
     for (const blockchainName in zeroLend.blockchains) {
       const blockchain = zeroLend.blockchains[blockchainName];
       const { contractAddress, tokens, chainId, rpc } = blockchain;
