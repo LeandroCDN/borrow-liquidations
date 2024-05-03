@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "manager": "node scripts/actions/manager.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.2",
+    "chalk": "^5.3.0",
     "dotenv": "^16.4.5",
     "ethers": "^6.12.0"
   }

@@ -1,9 +1,10 @@
 require("dotenv").config();
 const createContract = require("./create-contract");
-const sindicateABI = require("../../ABI/sindicate.json");
+// const sindicateABI = require("../../ABI/sindicate.json");
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
+const c = require("../utils/consoleColors");
 
 const readFileAsync = promisify(fs.readFile);
 
@@ -14,13 +15,10 @@ async function checkAccounts({
   directionPath,
   blockchainName,
   tokenName,
+  floor,
+  roof,
 }) {
-  console.log("Iniciando el script Check-Accounts...");
-  
-  const direccionesPath = path.join(
-    __dirname,
-    `../../Lists/${directionPath}`
-  );
+  const direccionesPath = path.join(__dirname, `../../Lists/${directionPath}`);
   const direccionesData = await readFileAsync(direccionesPath, "utf8");
   const direcciones = JSON.parse(direccionesData);
 
@@ -39,6 +37,32 @@ async function checkAccounts({
     fs.mkdirSync(chainFolderPath);
   }
 
+  let folder;
+  if (
+    parseInt(floor) === 650000000000000000 &&
+    parseInt(roof) === 950000000000000000
+  ) {
+    folder = "liquidateAll";
+  } else if (
+    parseInt(floor) === 950000000000000000 &&
+    parseInt(roof) === 1000000000000000000
+  ) {
+    folder = "liquidateHalf";
+  } else if (
+    parseInt(floor) === 1000000000000000000 &&
+    parseInt(roof) === 1010000000000000000
+  ) {
+    folder = "noLiquidate";
+  } else {
+    console.error("No se reconoce el rango de floor y roof:", floor, roof);
+    return;
+  }
+
+  const folderPath = path.join(chainFolderPath, folder);
+  if (!fs.existsSync(folderPath)) {
+    fs.mkdirSync(folderPath);
+  }
+
   const resumeFilePath = path.join(chainFolderPath, "/resume");
   if (!fs.existsSync(resumeFilePath)) {
     fs.mkdirSync(resumeFilePath);
@@ -50,13 +74,16 @@ async function checkAccounts({
   let i = 0;
   let totalAddresses = 0;
   const minValue = 199999999; // 99999999 = 0,99 usd
-  const floor = "650000000000000000";
-  const roof = "1000000000000000000";
   try {
     status = "Reading";
     for (const addressGroup of direcciones) {
       // const vectorDeTest = ["0x467941883c3062d1f04178f75e700a21f5a1aa90", "0x2f2920da1407b134cadd7207e21579ec20bb6a85", "0x97da64fdc901c64ce0588d61091085e180791519", "0x3b4977f2c6e90bc6bc4011b8443c578dd672ff44", "0x9b61542f076b8ae611650cc4eb932e60315f6a0f", "0x98a0ea5cba5ffb08bbc177880914ffafd390afa0", "0x9114361e38315a7f189158fb892e184bfd25a4d0", "0x00b9228eb19a13c6a943b350916dd2aa7f182c21", "0x875cbee17c35e8ce1f1919dd508de63e833d22c0", "0x046e2d2d1dde81f6a1d2d8f2bb8fb24a592371db"]
-      const listOfLowHealtFactor = await sindicate.fullCheck(addressGroup, minValue, floor, roof);
+      const listOfLowHealtFactor = await sindicate.fullCheck(
+        addressGroup,
+        minValue,
+        floor,
+        roof
+      );
       i++;
 
       // Buscar la posición de la primera dirección '0x0000000000000000000000000000000000000000'
@@ -64,23 +91,20 @@ async function checkAccounts({
         ([address]) => address === "0x0000000000000000000000000000000000000000"
       );
       // Cortar el vector desde la primera posición hasta indexOfZeroAddress
-      const trimmedResult = listOfLowHealtFactor.slice(
-        0,
-        indexOfZeroAddress 
-      );
+      const trimmedResult = listOfLowHealtFactor.slice(0, indexOfZeroAddress);
       const formattedResult = trimmedResult.map(([address, value]) => [
         address,
         value.toString(),
       ]);
-      
+
       console.log(
-        `[${blockchainName}-${tokenName}] Progress:[${i}/${length}] ResultLength: ${formattedResult.length}`
+        `${c.FG_YELLOW}[${blockchainName}-${tokenName}]${c.RESET} Progress:[${i}/${length}] ResultLength: ${formattedResult.length}`
       );
-      if(formattedResult.length > 0){
-        totalAddresses+=formattedResult.length;
+      if (formattedResult.length > 0) {
+        totalAddresses += formattedResult.length;
         // Escribir el archivo lowFactorAddresses.json con el contenido de trimmedResult
-        const lowFactorFilePath = path.join(chainFolderPath, tokenName+".json");
-        
+        const lowFactorFilePath = path.join(folderPath, tokenName + ".json");
+
         fs.writeFileSync(
           lowFactorFilePath,
           JSON.stringify(formattedResult, null, 2),
@@ -95,8 +119,10 @@ async function checkAccounts({
   }
   const end = Date.now();
   const date = new Date(end);
-  const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-  
+  const formattedDate = `${date.getDate()}/${
+    date.getMonth() + 1
+  }/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
   const totalTimeInSeconds = (end - start) / 1000;
   // Crear el archivo resume.json
   const resumeData = {
@@ -107,13 +133,15 @@ async function checkAccounts({
     token: tokenName,
     blockchain: blockchainName,
     totalCollateralBase: minValue,
-    time:formattedDate,
+    time: formattedDate,
     minHf: floor,
-    maxHr: roof
+    maxHr: roof,
   };
 
   const resumePath = path.join(resumeFilePath, `resume-${tokenName}.json`);
-  fs.writeFileSync(resumePath, JSON.stringify(resumeData, null, 2),{ flag: "a" });
+  fs.writeFileSync(resumePath, JSON.stringify(resumeData, null, 2), {
+    flag: "a",
+  });
   console.log("Finish in:", totalTimeInSeconds, "seconds");
 }
 
