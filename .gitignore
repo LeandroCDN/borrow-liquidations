@@ -3,3 +3,5 @@
 /.pnp
 .pnp.js
 .env
+/list
+/lowFactor

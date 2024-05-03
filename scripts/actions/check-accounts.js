@@ -98,7 +98,7 @@ async function checkAccounts({
       ]);
 
       console.log(
-        `${c.FG_YELLOW}[${blockchainName}-${tokenName}]${c.RESET} Progress:[${i}/${length}] ResultLength: ${formattedResult.length}`
+        `${c.FG_YELLOW}[${blockchainName}-${tokenName}]${c.RESET} Progress:[${i}/${length}] ResultLength: ${formattedResult.length}, folder${folder}`
       );
       if (formattedResult.length > 0) {
         totalAddresses += formattedResult.length;
