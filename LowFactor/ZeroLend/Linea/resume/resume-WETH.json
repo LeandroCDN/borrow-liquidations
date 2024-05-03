@@ -1,17 +1,31 @@
 {
-  "direcciones": 15,
-  "time": "29/4/2024 11:40:39",
-  "lastRead": 102,
+  "direcciones": 4,
+  "time": "2/5/2024 18:51:43",
+  "lastRead": 100,
   "status": "Writed",
   "token": "WETH",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }{
-  "direcciones": 9,
-  "time": "29/4/2024 19:43:27",
-  "lastRead": 102,
+  "direcciones": 3,
+  "time": "3/5/2024 8:55:50",
+  "lastRead": 100,
   "status": "Writed",
   "token": "WETH",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 3,
+  "time": "3/5/2024 11:16:7",
+  "lastRead": 40,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }

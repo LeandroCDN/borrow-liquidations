@@ -1,40 +1,43 @@
 {
-  "ZeroLend": {
-    "blockchains": {
-      "Blast": {
-        "contractAddress": "0x34B08ccf9620aEd6d158BaE65e85Bb3bBe2c384A",
-        "chainId": "81457",
-        "rpc": "wss://multi-greatest-moon.blast-mainnet.quiknode.pro/6905460b2e8aee938a79723c1e8b072cbb2b654e/",
-        "tokens": {
-          "WETH": "listOfHolders/ZeroLend/Blast/debt/ZeroLend-Blast-V-D-WETH.json",
-          "USDB": "listOfHolders/ZeroLend/Blast/debt/ZeroLend-Blast-V-D-USDB.json"
+  "Protocols":{
+    "ZeroLend": {
+      "blockchains": {
+        "Linea": {
+          "contractAddress": "0x27D9E4203781f6b78f6fccb8F029c1befa17c477",
+          "babav2": "0xD69A64C9dC983eE2b0c42246d904912232A1DCBF",
+          "chainId": "59144",
+          "rpc": "wss://linea-mainnet.infura.io/ws/v3/d66c313f3d434be7a134cb954b5ead36",
+          "tokens": {
+            "USDC": "ZeroLend/Linea/debt/zerolend-linea-V-D-USDC.json",
+            "USDT": "ZeroLend/Linea/debt/ZeroLend-linea-V-D-USDT.json",
+            "WETH": "ZeroLend/Linea/debt/ZeroLend-linea-V-D-WETH.json",
+            "WBTC": "ZeroLend/Linea/debt/ZeroLend-linea-V-D-WBTC.json"
+          }
+        },      
+        "Blast": {
+          "contractAddress": "0x34B08ccf9620aEd6d158BaE65e85Bb3bBe2c384A",
+          "chainId": "81457",
+          "rpc": "wss://multi-greatest-moon.blast-mainnet.quiknode.pro/6905460b2e8aee938a79723c1e8b072cbb2b654e/",
+          "tokens": {
+            "WETH": "ZeroLend/Blast/debt/ZeroLend-Blast-V-D-WETH.json",
+            "USDB": "ZeroLend/Blast/debt/ZeroLend-Blast-V-D-USDB.json"
+          }
         }
-      },
-      "Linea": {
-        "contractAddress": "0x59CaDD821B46805ebf994D643Ed349Fa48850bC8",
-        "chainId": "59144",
-        "rpc": "wss://linea-mainnet.infura.io/ws/v3/d66c313f3d434be7a134cb954b5ead36",
-        "tokens": {
-          "USDC": "listOfHolders/ZeroLend/Linea/debt/zerolend-linea-debt-usdc.json",
-          "USDT": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-USDT.json",
-          "WETH": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-WETH.json",
-          "WBTC": "listOfHolders/ZeroLend/Linea/debt/ZeroLend-linea-V-D-WBTC.json"
-        }
-      }      
-    }
-  },
-  "Aave":{
-    "blockchains": {
-      "Sepolia": {
-        "contractAddress": "0xCD4E9c86E3CF802691bAfAF7937DE2Ed63a2639C",
-        "chainId": "991",
-        "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
-        "tokens": {
-          "Dai": "listOfHolders/AaveAddress/sepolia/direcciones.json",
-          "WBTC": "listOfHolders/AaveAddress/sepolia/variableDebtEthWBTC.json"
+      }
+    },
+    "Aave":{
+      "blockchains": {
+        "Sepolia": {
+          "contractAddress": "0xCD4E9c86E3CF802691bAfAF7937DE2Ed63a2639C",
+          "chainId": "991",
+          "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
+          "tokens": {
+            "Dai": "listOfHolders/AaveAddress/sepolia/direcciones.json",
+            "WBTC": "listOfHolders/AaveAddress/sepolia/variableDebtEthWBTC.json",
+            "aETH": "listOfHolders/AaveAddress/sepolia/AaveSepoliaaEthWETH.json"
+          }
         }
       }
     }
-    
   }
 }

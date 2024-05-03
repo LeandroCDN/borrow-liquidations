@@ -1,17 +1,31 @@
 {
   "direcciones": 1,
-  "time": "29/4/2024 11:40:39",
+  "time": "2/5/2024 18:51:44",
   "lastRead": 2,
   "status": "Writed",
   "token": "WBTC",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }{
   "direcciones": 1,
-  "time": "29/4/2024 19:43:28",
+  "time": "3/5/2024 8:55:51",
   "lastRead": 2,
   "status": "Writed",
   "token": "WBTC",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 1,
+  "time": "3/5/2024 11:16:8",
+  "lastRead": 1,
+  "status": "Writed",
+  "token": "WBTC",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }

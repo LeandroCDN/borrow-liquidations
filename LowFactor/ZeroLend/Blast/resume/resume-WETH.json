@@ -1,6 +1,62 @@
 {
-  "direcciones": 0,
-  "time": "29/4/2024 11:39:39",
+  "direcciones": 2,
+  "time": "1/5/2024 11:34:17",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 2,
+  "time": "1/5/2024 11:46:22",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 2,
+  "time": "1/5/2024 11:46:39",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 2,
+  "time": "1/5/2024 11:48:43",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 2,
+  "time": "1/5/2024 11:53:1",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 1,
+  "time": "1/5/2024 19:12:50",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 2,
+  "time": "2/5/2024 6:24:4",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 2,
+  "time": "2/5/2024 6:48:30",
   "lastRead": 22,
   "status": "Writed",
   "token": "WETH",
@@ -8,10 +64,76 @@
   "totalCollateralBase": 99999999
 }{
   "direcciones": 0,
-  "time": "29/4/2024 19:42:29",
+  "time": "2/5/2024 8:25:21",
+  "lastRead": 0,
+  "status": "Error: TypeError: sindicate.fullCheck is not a function",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:26:9",
+  "lastRead": 0,
+  "status": "Error: TypeError: sindicate.fullCheck is not a function",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:28:6",
+  "lastRead": 0,
+  "status": "Error: TypeError: overflow (argument=\"value\", value=700000000000000000, code=INVALID_ARGUMENT, version=6.12.0)",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 1,
+  "time": "2/5/2024 8:32:38",
   "lastRead": 22,
   "status": "Writed",
   "token": "WETH",
   "blockchain": "Blast",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 99999999,
+  "minHf": "950000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 18:51:53",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 0,
+  "time": "3/5/2024 8:56:0",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 0,
+  "time": "3/5/2024 9:2:10",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 0,
+  "time": "3/5/2024 11:16:17",
+  "lastRead": 22,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }

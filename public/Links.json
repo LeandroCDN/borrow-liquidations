@@ -2,10 +2,13 @@
   "ZeroLend": {
     "blockchains": {
       "Linea": {
-        "contractAddress": "0x59CaDD821B46805ebf994D643Ed349Fa48850bC8",
+        "contractAddress": "0xace71cfa9ff653e56f8c4d6d566c953edc2e5ecd",
         "Pool-Proxy": "https://lineascan.build/address/0x2f9bB73a8e98793e26Cb2F6C4ad037BDf1C6B269",
         "UiPoolDataProviderV3": "https://lineascan.build/address/0x81b3184A3B5d4612F2c26A53Da8D99474B91B2D2",
         "PoolAddressesProvider": "https://lineascan.build/address/0xC44827C51d00381ed4C52646aeAB45b455d200eB",
+        "PROTOCOLDATAPROVIDER" :"https://lineascan.build/address/0x67f93d36792c49a4493652B91ad4bD59f428AD15#readContract",
+        "swapContract": "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
+        "swapContractv2": "0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86",
         "chainId": "59144",
         "rpc": "wss://linea-mainnet.infura.io/ws/v3/d66c313f3d434be7a134cb954b5ead36",
         "tokens": {
@@ -76,6 +79,12 @@
       },
       "Sepolia": {
         "contractAddress": "0x34b08ccf9620aed6d158bae65e85bb3bbe2c384a",
+        "Pool-Proxy": "https://sepolia.etherscan.io/address/0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951",
+        "UiPoolDataProviderV3": "0x69529987FA4A075D0C00B0128fa848dc9ebbE9CE",
+        "PoolAddressesProvider": "0x012bAC54348C0E635dCAc9D5FB99f06F24136C9A",
+        "ProtocolDataProvider": "0x3e9708d80f7B3e43118013075F7e95CE3AB31F31",
+        "oracle": "0x2da88497588bf89281816106C7259e31AF45a663",
+        "liquidiationBonusProvider": "0x3e9708d80f7B3e43118013075F7e95CE3AB31F31",
         "chainId": "991",
         "rpc": "wss://ethereum-sepolia-rpc.publicnode.com",
         "tokens": {
@@ -115,3 +124,6 @@
     }
   }
 }
+
+
+// exatImput param example:[renzo,fee,eth,fee,usdc] ["0x2416092f143378750bb29b79ed961ab195cceea50001f4e5d7c2a44ffddf6b295a15c148167daaaf5cf34f000064176211869ca2b568f2a7d4ee941e073a821ee1ff","0xBabad218eA340Ef0454E1e09D970F220F851A1D2",508815568691715,0]

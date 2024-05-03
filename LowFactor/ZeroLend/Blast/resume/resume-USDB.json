@@ -1,6 +1,46 @@
 {
-  "direcciones": 2,
-  "time": "29/4/2024 11:39:52",
+  "direcciones": 21,
+  "time": "1/5/2024 11:34:30",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 20,
+  "time": "1/5/2024 11:48:56",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 20,
+  "time": "1/5/2024 11:53:14",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 10,
+  "time": "1/5/2024 19:13:4",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 12,
+  "time": "2/5/2024 6:24:16",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 12,
+  "time": "2/5/2024 6:48:43",
   "lastRead": 34,
   "status": "Writed",
   "token": "USDB",
@@ -8,10 +48,76 @@
   "totalCollateralBase": 99999999
 }{
   "direcciones": 0,
-  "time": "29/4/2024 19:42:42",
+  "time": "2/5/2024 8:25:21",
+  "lastRead": 0,
+  "status": "Error: TypeError: sindicate.fullCheck is not a function",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:26:9",
+  "lastRead": 0,
+  "status": "Error: TypeError: sindicate.fullCheck is not a function",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:28:6",
+  "lastRead": 0,
+  "status": "Error: TypeError: overflow (argument=\"value\", value=700000000000000000, code=INVALID_ARGUMENT, version=6.12.0)",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 9,
+  "time": "2/5/2024 8:32:51",
   "lastRead": 34,
   "status": "Writed",
   "token": "USDB",
   "blockchain": "Blast",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 99999999,
+  "minHf": "950000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 2,
+  "time": "2/5/2024 18:52:6",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 2,
+  "time": "3/5/2024 8:56:13",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 2,
+  "time": "3/5/2024 9:4:14",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 2,
+  "time": "3/5/2024 11:16:30",
+  "lastRead": 34,
+  "status": "Writed",
+  "token": "USDB",
+  "blockchain": "Blast",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }

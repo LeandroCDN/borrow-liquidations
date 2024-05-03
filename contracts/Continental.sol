@@ -37,7 +37,7 @@ pragma solidity ^0.8.0;
 contract Continental {
     struct userData {
         address from;
-        uint128 healtFactor;
+        uint256 healtFactor;
     }
 
     IPool public pool;
@@ -81,7 +81,7 @@ contract Continental {
                 healt < maxLimit &&
                 totalCollateralBase > minTotalCollateralBase
             ) {
-                healthFactor[j] = userData(user[i], uint128(healt));
+                healthFactor[j] = userData(user[i], totalCollateralBase/1000000);
                 j++;
             }
         }
@@ -107,7 +107,7 @@ contract Continental {
                 healt < ceiling &&
                 totalCollateralBase > minTotalCollateralBase
             ) {
-                healthFactor[j] = userData(user[i], uint128(healt));
+                healthFactor[j] = userData(user[i],totalCollateralBase/1000000);
                 j++;
             }
         }

@@ -1,17 +1,61 @@
 {
-  "direcciones": 20,
-  "time": "29/4/2024 11:40:4",
-  "lastRead": 34,
+  "direcciones": 19,
+  "time": "2/5/2024 18:51:8",
+  "lastRead": 14,
   "status": "Writed",
   "token": "USDC",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }{
-  "direcciones": 14,
-  "time": "29/4/2024 19:42:53",
-  "lastRead": 34,
+  "direcciones": 15,
+  "time": "3/5/2024 8:55:13",
+  "lastRead": 14,
   "status": "Writed",
   "token": "USDC",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 15,
+  "time": "3/5/2024 9:1:58",
+  "lastRead": 14,
+  "status": "Writed",
+  "token": "USDC",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 15,
+  "time": "3/5/2024 9:4:1",
+  "lastRead": 14,
+  "status": "Writed",
+  "token": "USDC",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 15,
+  "time": "3/5/2024 9:8:8",
+  "lastRead": 14,
+  "status": "Writed",
+  "token": "USDC",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 13,
+  "time": "3/5/2024 11:15:28",
+  "lastRead": 14,
+  "status": "Writed",
+  "token": "USDC",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }

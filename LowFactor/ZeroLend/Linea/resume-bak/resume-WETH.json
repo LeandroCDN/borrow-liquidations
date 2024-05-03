@@ -1,0 +1,81 @@
+{
+  "direcciones": 13,
+  "time": "1/5/2024 11:35:16",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 336,
+  "time": "1/5/2024 11:49:41",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 13,
+  "time": "1/5/2024 11:52:52",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "1/5/2024 19:12:40",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 6:23:54",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 9,
+  "time": "2/5/2024 6:48:20",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:25:21",
+  "lastRead": 0,
+  "status": "Error: TypeError: sindicate.fullCheck is not a function",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:26:9",
+  "lastRead": 0,
+  "status": "Error: TypeError: sindicate.fullCheck is not a function",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:28:6",
+  "lastRead": 0,
+  "status": "Error: TypeError: overflow (argument=\"value\", value=700000000000000000, code=INVALID_ARGUMENT, version=6.12.0)",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}{
+  "direcciones": 0,
+  "time": "2/5/2024 8:29:34",
+  "lastRead": 102,
+  "status": "Writed",
+  "token": "WETH",
+  "blockchain": "Linea",
+  "totalCollateralBase": 99999999
+}

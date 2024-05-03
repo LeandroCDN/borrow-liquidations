@@ -1,17 +1,41 @@
 {
-  "direcciones": 8,
-  "time": "29/4/2024 11:40:7",
-  "lastRead": 9,
+  "direcciones": 5,
+  "time": "2/5/2024 18:51:12",
+  "lastRead": 10,
   "status": "Writed",
   "token": "USDT",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }{
-  "direcciones": 6,
-  "time": "29/4/2024 19:42:56",
-  "lastRead": 9,
+  "direcciones": 5,
+  "time": "3/5/2024 8:55:17",
+  "lastRead": 10,
   "status": "Writed",
   "token": "USDT",
   "blockchain": "Linea",
-  "totalCollateralBase": 99999999
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 4,
+  "time": "3/5/2024 9:2:2",
+  "lastRead": 10,
+  "status": "Writed",
+  "token": "USDT",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
+}{
+  "direcciones": 3,
+  "time": "3/5/2024 11:15:48",
+  "lastRead": 40,
+  "status": "Writed",
+  "token": "USDT",
+  "blockchain": "Linea",
+  "totalCollateralBase": 199999999,
+  "minHf": "650000000000000000",
+  "maxHr": "1000000000000000000"
 }

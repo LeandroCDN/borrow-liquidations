@@ -16,21 +16,10 @@ async function checkAccounts({
   tokenName,
 }) {
   console.log("Iniciando el script Check-Accounts...");
-  // const contractAddress = process.env.SEPOLIA_SINDICATE_V2_ADDRESS;
-  // const rpc = process.env.SEPOLIA_ETH_RPC;
-  // const ABI = sindicateABI.result;
-  // const directionPath = "listOfHolders/direcciones.json";
-  // const chainId = 99991;
-
-  // const sindicate = await createContract({
-  //   contractAddress,
-  //   rpc,
-  //   ABI,
-  // });
-  // Leer el archivo direcciones.json
+  
   const direccionesPath = path.join(
     __dirname,
-    `../../contracts/addresses/${directionPath}`
+    `../../Lists/${directionPath}`
   );
   const direccionesData = await readFileAsync(direccionesPath, "utf8");
   const direcciones = JSON.parse(direccionesData);
@@ -60,12 +49,14 @@ async function checkAccounts({
   let status = "starting";
   let i = 0;
   let totalAddresses = 0;
-  const minValue = 99999999;
+  const minValue = 199999999; // 99999999 = 0,99 usd
+  const floor = "650000000000000000";
+  const roof = "1000000000000000000";
   try {
     status = "Reading";
     for (const addressGroup of direcciones) {
       // const vectorDeTest = ["0x467941883c3062d1f04178f75e700a21f5a1aa90", "0x2f2920da1407b134cadd7207e21579ec20bb6a85", "0x97da64fdc901c64ce0588d61091085e180791519", "0x3b4977f2c6e90bc6bc4011b8443c578dd672ff44", "0x9b61542f076b8ae611650cc4eb932e60315f6a0f", "0x98a0ea5cba5ffb08bbc177880914ffafd390afa0", "0x9114361e38315a7f189158fb892e184bfd25a4d0", "0x00b9228eb19a13c6a943b350916dd2aa7f182c21", "0x875cbee17c35e8ce1f1919dd508de63e833d22c0", "0x046e2d2d1dde81f6a1d2d8f2bb8fb24a592371db"]
-      const listOfLowHealtFactor = await sindicate.checkMinTotalCollateralBase(addressGroup, minValue);
+      const listOfLowHealtFactor = await sindicate.fullCheck(addressGroup, minValue, floor, roof);
       i++;
 
       // Buscar la posición de la primera dirección '0x0000000000000000000000000000000000000000'
@@ -116,7 +107,9 @@ async function checkAccounts({
     token: tokenName,
     blockchain: blockchainName,
     totalCollateralBase: minValue,
-    time:formattedDate
+    time:formattedDate,
+    minHf: floor,
+    maxHr: roof
   };
 
   const resumePath = path.join(resumeFilePath, `resume-${tokenName}.json`);
